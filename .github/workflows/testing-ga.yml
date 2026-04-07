@@ -3,7 +3,7 @@ name: testing-ga
 on: push
 
 jobs:
-  get_versions:
+  getversions:
     runs-on: ubuntu-latest
     steps:
       - name: GetGitVersion
@@ -15,7 +15,7 @@ jobs:
       - name: GetJavaVersion
         run: java -version
 
-  copy_files:
+  copyfiles:
     runs-on: ubuntu-latest
     steps:
       - name: CreateDirectory
