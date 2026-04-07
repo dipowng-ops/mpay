@@ -1,1 +1,35 @@
+name: testing ga
+on: push
+
+jobs:
+  Get versions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GetGitVersion
+        run: git version
+        
+      - name: GetNodeVersion
+        run: node version
+
+      - name: GetJavaVersion
+        run: java -version
+
+ CopyFiles:
+  runs on: ubuntu-latest
+  steps: 
+    - name: CreateDirectory
+      run: mkdir /root/myfiles
+      
+    - name: Getfiles
+      runs: wget https://downloads.apache.org/aries/blueprint-maven-plugin-1.1.0-source-release.zip
+  
+    - name: GetOtherFiles
+      run:
+        wget https://downloads.apache.org/aries/blueprint-maven-plugin-1.1.0-source-release.zip
+        mv blueprint-maven-plugin-1.1.0-source-release.zip /root/myfiles
+        cd /root/myfiles
+        unzip blueprint-maven-plugin-1.1.0-source-release.zip
+      
+
+      
 
